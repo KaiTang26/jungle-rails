@@ -1,0 +1,13 @@
+<h1>Add New Categories</h1>
+
+<%= form_for  :category, url: admin_categories_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Categories List', admin_categories_path%>
