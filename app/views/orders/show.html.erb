@@ -4,8 +4,11 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
+  <h2>The Order Summary</h2>
+
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h6>Email:  <%= @order.email %></h6>
   </div>
 
   <div class="panel panel-default items">
