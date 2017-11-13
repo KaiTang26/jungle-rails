@@ -25,7 +25,70 @@
         </dl>
       </div>
     </div>
-
   </article>
+
+  <h3> Product Review</h3>
+  <table class="review">
+      <thead>
+        <tr>
+          <th>User Name</th>
+
+          <th>Description</th>
+
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reviews.reverse_each do |review| %>
+       <tr>
+        <td>
+        <p>
+        <% @user = User.find_by(id: review.user_id)%>
+          <%= @user.first_name %> <%= @user.last_name %>  
+        </p>
+        </td>
+        <td>
+        <p>
+          <%= review.description %>
+        </p>
+        </td>
+        <td>
+        <p>
+          <%= review.rating %>
+          <% if current_user.id == review.user_id%>
+          <%= link_to 'Destroy', product_review_path(params[:id], review.id), 
+            method: :delete,
+            data: {confirm: "Are you sure?"}%>
+          <% end %>
+        </p>
+        </td>
+      </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <% if current_user%>
+
+      <h1>Add New review</h1>
+
+      <%= form_for  :review, url: product_reviews_path(params[:id]), local: true do |form| %>
+        <p>
+          <%= form.label :description %><br>
+          <%= form.text_field :description %>
+        </p>
+
+        <p>
+          <%= form.label :rating %><br>
+          <%= form.select :rating, [1,2,3,4,5,6,7,8,9,10] %>
+        </p>
+         <p>
+          <%= form.submit %>
+        </p>
+        <% end %>
+
+    <% end %>
+
+
+
 
 </section>

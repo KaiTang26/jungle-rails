@@ -132,5 +132,99 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "product section done"
+
+pro1 = Product.find(1)
+pro2 = Product.find(2)
+pro3 = Product.find(3)
+pro4 = Product.find(4)
+pro5 = Product.find(5)
+pro6 = Product.find(6)
+pro7 = Product.find(7)
+pro8 = Product.find(8)
+pro9 = Product.find(9)
+pro10 = Product.find(10)
+pro11 = Product.find(11)
+pro12 = Product.find(12)
+
+pro1.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 1
+})
+
+pro2.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 2
+})
+
+pro2.reviews.create!({
+  user_id: 1,
+  description: "not bad",
+  rating: 3
+})
+
+pro3.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 4
+})
+
+pro4.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 5
+})
+
+pro5.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 6
+})
+
+pro6.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 7
+})
+
+pro7.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 8
+})
+
+pro8.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 9
+})
+
+pro9.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 10
+})
+
+pro10.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 9
+})
+
+pro11.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 4
+})
+
+pro12.reviews.create!({
+  user_id: 1,
+  description: "good one",
+  rating: 6
+})
+
+
 
 puts "DONE!"
