@@ -4,9 +4,11 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by_email(params[:email])
-
-        if @user && @user.authenticate(params[:password])
+        
+        if user = User.authenticate_with_credentials(params[:email], params[:password])
+            @em = params[:email]
+         
+            @user = User.find_by_email(@em.strip)
             session[:user_id] = @user.id
             redirect_to root_path
         else
@@ -18,5 +20,7 @@ class SessionsController < ApplicationController
         session.delete(:user_id)
         redirect_to root_path
     end
+
+   
 
 end
