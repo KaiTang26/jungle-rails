@@ -28,7 +28,7 @@
   </article>
 
   <h3> Product Review</h3>
-  <table class="review">
+  <table class="table table-bordered">
       <thead>
         <tr>
           <th>User Name</th>
@@ -55,7 +55,7 @@
         <td>
         <p>
           <%= review.rating %>
-          <% if current_user.id == review.user_id%>
+          <% if current_user && current_user.id == review.user_id%>
           <%= link_to 'Destroy', product_review_path(params[:id], review.id), 
             method: :delete,
             data: {confirm: "Are you sure?"}%>
